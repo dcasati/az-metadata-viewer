@@ -50,7 +50,7 @@ func main() {
 	req.Header.Add("Metadata", "True")
 	q := req.URL.Query()
 	q.Add("format", "json")
-	q.Add("api-version", "2017-04-02")
+	q.Add("api-version", "2017-08-01")
 	req.URL.RawQuery = q.Encode()
 	resp, err := client.Do(req)
 
