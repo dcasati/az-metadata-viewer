@@ -93,9 +93,20 @@ Network
 ------------------------------------------------------------------------------
 {{range .Network.Interface -}}
 {{range .Ipv4.IPAddress -}}
-*
-{{if .PrivateIPAddress}}{{printf "\tPrivate IP: %s" .PrivateIPAddress}}{{end}}
-{{if .PublicIPAddress}}{{printf "\tPublic IP: %s" .PublicIPAddress}}{{end}}
+
+{{if .PrivateIPAddress}}{{printf "\tPrivate IP: %s" .PrivateIPAddress}}{{end -}}
+{{if .PublicIPAddress}}{{printf "\n\tPublic IP: %s" .PublicIPAddress}}{{end}}
 {{end -}}
+
+{{range .Ipv4.Subnet -}}
+
+{{if .Address}}{{printf "\tSubnet Address: %s/%s" .Address .Prefix}}{{end}}
 {{end -}}
+
+{{range .Ipv6.IPAddress -}}
+{{if .IPAddress}}{{printf "\tIPv6 Addr: %s" .IPAddress}}{{end}}
+{{end -}}
+
+{{if .MacAddress}}{{printf "\tMAC Addr: %s\n" .MacAddress}}{{end}}
+{{end -}} 
 `
