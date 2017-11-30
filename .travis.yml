@@ -1,6 +1,7 @@
 ---
   language: go
   sudo: false
+  skip_cleanup: true
   notifications:
     email: true
   go:
