@@ -33,5 +33,5 @@ Network
 ## Install
 
 ```bash 
-$ go get -u github.com/dcasati/az-metadata-viewr
+$ go get -u github.com/dcasati/az-metadata-viewer
 ```
